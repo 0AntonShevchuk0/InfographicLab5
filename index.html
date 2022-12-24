@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Множини чисел</title>
+</head>
+<body>
+    <svg width="100%" height="100vh">
+        <defs>
+            <style>
+                @font-face {
+                    font-family: "PlanetBenson";
+                    src: local("PlanetBenson"),
+                    url("/fonts/planet_benson.ttf") format("opentype")
+                }
+                #svg-content {
+                    background-color: black;
+                }
+                .number-text {
+                    font-size: 24px;
+                    color: black;
+                    font-family: "PlanetBenson",monospace;
+                    z-index: 10;
+                }
+                .numbers-letter-text {
+                    font-size: 48px;
+                    color: black;
+                    font-family: "Roboto",monospace;
+                    font-style: italic;
+                    font-weight: 900;
+                    z-index: 10;
+                }
+                .desc-line {
+                    fill: none;
+                    stroke: #404040;
+                    stroke-width: 5px;
+                }
+                .desc-text {
+                    font-size: 36px;
+                    color: black;
+                    font-family: "Roboto",monospace;
+                    font-style: italic;
+                    font-weight: 600;
+                    z-index: 10;
+                }
+                .title {
+                    font-size: 72px;
+                    color: black;
+                    font-family: "Roboto",serif;
+                    background-color: white;
+                    font-weight: 600;
+                    z-index: 10;
+                }
+            </style>
+
+            <radialGradient id="nGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="5%">
+                <stop offset="90%" style="stop-color:rgb(100,255,75);stop-opacity:0.75" />
+                <stop offset="100%" style="stop-color:rgb(25,175,25);stop-opacity:1" />
+            </radialGradient>
+            <radialGradient id="zGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="5%">
+                <stop offset="90%" style="stop-color:rgb(255,255,75);stop-opacity:0.75" />
+                <stop offset="100%" style="stop-color:rgb(175,175,25);stop-opacity:1" />
+            </radialGradient>
+            <radialGradient id="qGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="5%">
+                <stop offset="90%" style="stop-color:rgb(75,200,255);stop-opacity:0.75" />
+                <stop offset="100%" style="stop-color:rgb(25,100,175);stop-opacity:1" />
+            </radialGradient>
+            <radialGradient id="rGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="5%">
+                <stop offset="90%" style="stop-color:rgb(255,150,75);stop-opacity:0.75" />
+                <stop offset="100%" style="stop-color:rgb(175,100,25);stop-opacity:1" />
+            </radialGradient>
+
+            <filter id="shadow" x="0" y="0" width="200%" height="200%">
+                <feOffset result="offOut" in="SourceGraphic" dx="0" dy="10" />
+                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="20" />
+                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+        </defs>
+
+        <g id="svg-content">
+            <image href="/images/background.jpg"/>
+            <rect x="100" y="20" width="1600" height="825" fill="#DFBF9FEF" stroke="black" stroke-width="5"/>
+
+
+            <ellipse cx="600" cy="500" rx="450" ry="300" fill="url(#rGrad)" filter="url(#shadow)"/>
+            <ellipse cx="600" cy="525" rx="330" ry="220" fill="url(#qGrad)"/>
+            <ellipse cx="600" cy="550" rx="210" ry="140" fill="url(#zGrad)"/>
+            <ellipse cx="600" cy="575" rx="90" ry="60" fill="url(#nGrad)"/>
+
+            <g class="desc-line">
+                <polyline points="630,500 1130,500 1190,590 1600,590">
+                    <animate attributeType="CSS" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0;0.05;0.2;0.25;1" dur="24s" repeatCount="indefinite" />
+                </polyline>
+                <polyline points="630,425 1130,425 1190,485 1600,485">
+                    <animate attributeType="CSS" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.3;0.45;0.5;1" dur="24s" repeatCount="indefinite" />
+                </polyline>
+                <polyline points="630,290 1130,290 1190,320 1600,320">
+                    <animate attributeType="CSS" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.5;0.55;0.70;0.75;1" dur="24s" repeatCount="indefinite" />
+                </polyline>
+                <polyline points="630,215 1600,215">
+                    <animate attributeType="CSS" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.75;0.8;0.95;1;1" dur="24s" repeatCount="indefinite" />
+                </polyline>
+            </g>
+
+            <text x="700" y="80" class="title">Множини чисел</text>
+
+            <g class="desc-text">
+                <text x="1250" y="580">
+                    Натуральні числа
+                    <animate attributeType="CSS" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0;0.05;0.2;0.25;1" dur="24s" repeatCount="indefinite" />
+                </text>
+                <text x="1365" y="475">
+                    Цілі числа
+                    <animate attributeType="CSS" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.25;0.3;0.45;0.5;1" dur="24s" repeatCount="indefinite" />
+                </text>
+                <text x="1225" y="310">
+                    Раціональні числа
+                    <animate attributeType="CSS" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.5;0.55;0.70;0.75;1" dur="24s" repeatCount="indefinite" />
+                </text>
+                <text x="1325" y="205">
+                    Дійсні числа
+                    <animate attributeType="CSS" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.75;0.8;0.95;1;1" dur="24s" repeatCount="indefinite" />
+                </text>
+            </g>
+
+            <g class="numbers-letter-text">
+                <text x="600" y="530">N</text>
+                <text x="600" y="425">Z</text>
+                <text x="600" y="320">Q</text>
+                <text x="600" y="215">R</text>
+            </g>
+
+            <g class="number-text">
+                <text x="550" y="575" transform="rotate(330, 550, 575)">137</text>
+                <text x="625" y="550" transform="rotate(45, 625, 550)">14</text>
+                <text x="600" y="600" transform="rotate(350, 600, 600)">5</text>
+
+                <text x="525" y="500" transform="rotate(340, 525, 500)">-3</text>
+                <text x="700" y="525" transform="rotate(50, 700, 525)">-541</text>
+                <text x="600" y="660" transform="rotate(10, 600, 660)">0</text>
+                <text x="475" y="600" transform="rotate(260, 475, 600)">-13</text>
+
+                <text x="425" y="450" transform="rotate(300, 425, 450)">0,14</text>
+                <text x="825" y="525" transform="rotate(80, 825, 525)">-5/3</text>
+                <text x="475" y="700" transform="rotate(25, 475, 700)">37,1</text>
+                <text x="650" y="400" transform="rotate(320, 650, 400)">-4,78</text>
+
+                <text x="500" y="275" transform="rotate(345, 500, 275)">√2</text>
+                <text x="975" y="575" transform="rotate(105, 975, 575)">1/ √3</text>
+                <text x="200" y="500" transform="rotate(70, 200, 500)">-√54</text>
+            </g>
+        </g>
+    </svg>
+</body>
+
+<script>
+    function zoom() {
+        const scale = `scale(${window.innerWidth / 1920})`;
+        const svg = document.getElementById('svg-content');
+        svg.setAttribute("transform", scale);
+    }
+    zoom()
+    window.onresize=zoom;
+</script>
+</html>
